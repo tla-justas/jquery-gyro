@@ -25,6 +25,18 @@
 		$('#nomouseel').gyroOn({
 			mouse: false
 		});
+
+		$('#invertedel').gyroOn({
+			invert: true
+		});
+
+		$('#horizontalel').gyroOn({
+			direction: 'horizontal'
+		});
+
+		$('#verticalel').gyroOn({
+			direction: 'vertical'
+		});
 	});
 	</script>
 	<style type="text/css">
@@ -54,6 +66,18 @@
 		#nomouseel {
 			color: pink;
 		}
+
+		#invertedel {
+			color: cyan;
+		}
+
+		#horizontalel {
+			color: lightgray;
+		}
+
+		#verticalel {
+			color: violet;
+		}
 	</style>
 </head>
 <body>
@@ -67,18 +91,25 @@
 		This element is in fixed position. It will always stay on top of the page, no matter how you scroll the page.
 	</div>
 
-	<p>After some <strong>bacon ipsum</strong> another sample: a relative element with an image.</p>
-
-	<p>Bacon ipsum dolor sit amet ullamco sint boudin, pork belly pork sed ground round bacon brisket dolore meatball. Ball tip bresaola biltong swine voluptate. Shoulder capicola duis landjaeger jowl in ground round ullamco cow frankfurter bresaola ribeye. Ground round in rump jerky, pig proident sirloin labore est commodo. Tail anim capicola, in adipisicing sausage pork chop laborum. Kielbasa capicola dolore cow sirloin jerky. Consectetur cupidatat bresaola duis ex, anim tempor hamburger ut boudin venison doner cillum.</p>
-
-	<p>Ut brisket ad ea duis. Esse culpa dolore boudin tri-tip brisket consequat pork chop beef fatback exercitation qui. Anim landjaeger aliqua ut ad qui. Minim shank ut magna id ribeye. Enim spare ribs do hamburger irure cow, meatloaf duis chuck jowl boudin pastrami. Anim esse shoulder adipisicing. Sed incididunt laboris fugiat pariatur ball tip ex beef ribs kevin non.</p>
-
 	<div id="relativeel">
+		<p>A relative element with an image</p>
 		<img src="image.jpg" />
 	</div>
 
 	<div id="nomouseel">
 		This is another relative element. This time, it won't move with the mouse - so mobile only!
+	</div>
+
+	<div id="invertedel">
+		This element is also relative. Also, it will have both axes inverted.
+	</div>
+
+	<div id="horizontalel">
+		This element will only move horizontally
+	</div>
+
+	<div id="verticalel">
+		This element will only move vertically
 	</div>
 </body>
 </html>

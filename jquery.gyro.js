@@ -9,6 +9,17 @@
 			var invertAxes = window.orientation ? true : false;
 
 			function moveElement(top, left) {
+				if (true === options.invert) {
+					top = -top;
+					left = -left;
+				}
+
+				if ('horizontal' == options.direction) {
+					top = 0;
+				} else if ('vertical' == options.direction) {
+					left = 0;
+				}
+
 				$element.css({
 					top: top,
 					left: left
@@ -42,8 +53,8 @@
 					left: $window.width() >> 1
 				}
 
-				var top = (e.clientY - center.top) * options.distance / $window.height();
-				var left = (e.clientX - center.left) * options.distance / $window.width();
+				var top = (center.top - e.clientY) * options.distance / $window.height();
+				var left = (center.left - e.clientX) * options.distance / $window.width();
 
 				moveElement(top, left);
 			}
@@ -57,7 +68,8 @@
 				position: 'relative',
 				top: 0,
 				left: 0,
-				mouse: true
+				mouse: true,
+				invert: false
 	        }, _options );
 
 	        parallaxDelta = options.distance * (navigator.userAgent.match(/(iPod|iPhone|iPad)/i) ? 0.1 : 2);
