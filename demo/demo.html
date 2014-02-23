@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<title>jQuery Scrolling Chess by Davide Cassenti</title>
+	<meta name="title" content="jQuery Scrolling Chess by Davide Cassenti" />
+	<meta name="description" content="Add a chessboard that plays as you scroll" />
+	<meta content="http://davide.cassenti.net/projects/scrolling-chess/demo.html" property="og:url" />
+	<meta name="author" content="Davide Cassenti">
+	<link rel="canonical" href="http://davide.cassenti.net/projects/scrolling-chess/demo.html" />
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../jquery.gyro.min.js"></script>
+	<link href='//fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+	<script>
+	$(document).ready(function() {
+		$('#fixedel').gyroOn({
+			position: 'fixed',
+			distance: 100,
+			speed: 2000
+		});
+
+		$('#relativeel').gyroOn();
+
+		$('#nomouseel').gyroOn({
+			mouse: false
+		});
+	});
+	</script>
+	<style type="text/css">
+		body {
+			background: black;
+			color: white;
+			font-family: "Lato", sans-serif;
+			font-weight: 300;
+		}
+
+		h1, h2 {
+			font-weight: 700;
+			color: red;
+			margin: 0;
+		}
+
+		#fixedel {
+			color: green;
+			z-index: -1;
+		}
+
+		#relativeel {
+			color: yellow;
+			text-align: center;
+		}
+
+		#nomouseel {
+			color: pink;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>jQuery Gyro</h1>
+		<h2>by Davide Cassenti</h2>
+
+		<p>jQuery Gyro lets you move elements in the page as you move the device. The effect uses the device motion sensor and lets you customize speed and distance.</p>
+	</header>
+	<div id="fixedel">
+		This element is in fixed position. It will always stay on top of the page, no matter how you scroll the page.
+	</div>
+
+	<p>After some <strong>bacon ipsum</strong> another sample: a relative element with an image.</p>
+
+	<p>Bacon ipsum dolor sit amet ullamco sint boudin, pork belly pork sed ground round bacon brisket dolore meatball. Ball tip bresaola biltong swine voluptate. Shoulder capicola duis landjaeger jowl in ground round ullamco cow frankfurter bresaola ribeye. Ground round in rump jerky, pig proident sirloin labore est commodo. Tail anim capicola, in adipisicing sausage pork chop laborum. Kielbasa capicola dolore cow sirloin jerky. Consectetur cupidatat bresaola duis ex, anim tempor hamburger ut boudin venison doner cillum.</p>
+
+	<p>Ut brisket ad ea duis. Esse culpa dolore boudin tri-tip brisket consequat pork chop beef fatback exercitation qui. Anim landjaeger aliqua ut ad qui. Minim shank ut magna id ribeye. Enim spare ribs do hamburger irure cow, meatloaf duis chuck jowl boudin pastrami. Anim esse shoulder adipisicing. Sed incididunt laboris fugiat pariatur ball tip ex beef ribs kevin non.</p>
+
+	<div id="relativeel">
+		<img src="image.jpg" />
+	</div>
+
+	<div id="nomouseel">
+		This is another relative element. This time, it won't move with the mouse - so mobile only!
+	</div>
+</body>
+</html>
